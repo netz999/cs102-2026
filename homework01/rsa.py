@@ -12,8 +12,11 @@ def is_prime(n: int) -> bool:
     >>> is_prime(8)
     False
     """
-    return number % 2 != 0
-    pass
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+
+    return True
 
 
 def gcd(a: int, b: int) -> int:
@@ -24,10 +27,12 @@ def gcd(a: int, b: int) -> int:
     >>> gcd(3, 7)
     1
     """
-    # PUT YOUR CODE HERE
-    pass
-
-
+    while a != b:
+        if a > b:
+            a = a - b
+        else:
+            b = b - a
+    return a
 def multiplicative_inverse(e: int, phi: int) -> int:
     """
     Euclid's extended algorithm for finding the multiplicative
