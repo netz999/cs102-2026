@@ -1,7 +1,5 @@
 import random
 import typing as tp
-import random
-import typing as tp
 
 
 def is_prime(n: int) -> bool:
@@ -31,8 +29,10 @@ def gcd(a: int, b: int) -> int:
     >>> gcd(3, 7)
     1
     """
-    if a == 0: return b
-    if b == 0: return a
+    if a == 0:
+        return b
+    if b == 0:
+        return a
 
     while a != b:
         if a > b:
@@ -89,7 +89,7 @@ def encrypt(pk: tp.Tuple[int, int], plaintext: str) -> tp.List[int]:
 
 def decrypt(pk: tp.Tuple[int, int], ciphertext: tp.List[int]) -> str:
     key, n = pk
-    plain = [chr((char ** key) % n) for char in ciphertext]
+    plain = [chr((char**key) % n) for char in ciphertext]
     return "".join(plain)
 
 
